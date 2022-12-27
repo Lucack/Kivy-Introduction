@@ -1,0 +1,5 @@
+#:import name x.y.z
+#:import isdir os.path.isdir
+#:import np numpy        -> para importar aquivos do python
+
+#:set name value         -> define variavel global

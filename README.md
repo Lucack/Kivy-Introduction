@@ -1,2 +1,2 @@
 # Kivy-Introduction
-Studying the Kivy module to create mobile apps
+Studying the Kivy and KivyMD module to create mobile apps

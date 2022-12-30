@@ -1,0 +1,44 @@
+Box:
+
+<Box>:
+    size_hint: 0.98,0.98
+    pos_hint: {"y": 0.02,"x": 0.02}
+    spacing:"10dp"
+    Button:
+        text: "A"
+        size_hint: None,None
+        width:"100dp"
+        height: "80dp"
+        pos_hint: {"center_y": 0.5}
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing:"10dp"
+        size_hint: 0.6,0.98
+        
+        Button: 
+            text: "B1 in BoxBoxLayout"            
+        Button: 
+            text: "B2 in BoxBoxLayout"
+        Button: 
+            text: "B3 in BoxBoxLayout"
+    Label:
+        text: "My 2 Buttons in vertical orientation by Box Layuot"
+        color: 1, 1, 1, 1
+
+
+<MainWidget>:
+    Button:
+        text: "Click meee"
+        size: "200dp", "80dp"
+        pos: root.center_x-self.width/2, str(root.center_y-self.height/2-root.center_y/3)+"dp"
+        color: 1, 1, 1, 1
+        # r g b a
+    Label:
+        text: "My screen on Kivy"
+        font_size: 50
+        bold: True
+        italic: True
+        underline: True
+        pos: root.center_x-self.width/2, root.center_y-self.height/2+root.center_y/4
+        color: 0.7, 0, 0.7, 0.7

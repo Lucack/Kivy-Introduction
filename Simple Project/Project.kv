@@ -1,0 +1,83 @@
+Widget1:
+
+<Widget1>:
+    size_hint: 0.96, 0.96
+    pos_hint: {'x':0.02 , 'y':0.02}
+    cols: 3
+    spacing:"10dp"
+    ToggleButton:
+        id: toggle_button
+        text:"OFF"
+        on_state: root.on_toggle_state(self)
+        size_hinte: None,1
+        
+        
+        width: "100dp"
+
+    
+    BoxLayout:
+        spacing: '10dp'
+        orientation: 'vertical'
+        Button:
+            text: "Counter Button"
+            on_press: root.on_button_click()
+            disabled: not root.count_enable
+            size_hint: 0.8,1
+        Button:
+            text: "Clear Counter"
+            on_press: root.clear()
+            disabled: not root.count_enable
+            size_hint: 0.8,1
+            
+
+    Label:
+        text: root.my_text
+        font_name: 'fonts/Lcd.ttf'
+        font_size: "40dp"
+        color: 1,0.5,1,1
+
+    Switch:
+        on_active: root.on_switch_active(self)
+        
+    
+    Slider:
+        id: slider
+        min: 0
+        max: 100
+        value: 50
+        on_value: root.slider_value(self)
+        orientation: 'vertical'
+        disabled: not root.sliderEnable
+        
+    GridLayout:
+
+        size_hint: 0.96, 0.96
+        pos_hint: {'x':0.02 , 'y':0.02}
+        cols: 1
+
+        Label:
+            text: root.value_text
+            
+        ProgressBar:
+            max: 100
+            value: int(slider.value)
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 1
+        pos_hint: {'y':0.5 }
+        Label:
+            text: root.textInput
+        TextInput:
+            id: input    
+            text: ""
+            multiline: False
+            on_text_validate: root.on_text_validate(self)
+
+    Image:
+        size_hint: 1, 1
+        allow_scretch: True
+        source: "images/cake.jpg"
+
+        
+    

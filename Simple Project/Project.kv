@@ -67,17 +67,22 @@ Widget1:
         size_hint: 1, 1
         pos_hint: {'y':0.5 }
         Label:
-            text: root.textInput
+            text: "Your search: " + root.textInput
+            halign:"left"
+            valign:"middle"
         TextInput:
             id: input    
             text: ""
             multiline: False
             on_text_validate: root.on_text_validate(self)
+            padding_x:(self.width - self._get_text_width((self.text), self.tab_width, self._label_cached)) / 2
 
-    Image:
-        size_hint: 1, 1
+    AsyncImage:
         allow_scretch: True
-        source: "images/cake.jpg"
+        source: root.link1
+    AsyncImage:
+        allow_scretch: True
+        source: root.link2
 
         
     

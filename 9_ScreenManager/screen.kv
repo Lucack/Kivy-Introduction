@@ -1,0 +1,34 @@
+<MenuScreen>:
+    BoxLayout:
+        Button:
+            text: 'Goto settings'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'settings'
+        Button:
+            text: 'Quit'
+
+<SettingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to menu'
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+        # Others Transitions:  sm = ScreenManager(transition=FadeTransition())
+
+    # NoTransition - switches screens instantly with no animation
+    # SlideTransition - slide the screen in/out, from any direction
+    # CardTransition - new screen slides on the previous or the old one slides off the new one depending on the mode
+    # SwapTransition - implementation of the iOS swap transition
+    # FadeTransition - shader to fade the screen in/out
+    # WipeTransition - shader to wipe the screens from right to left
+    # FallOutTransition - shader where the old screen ‘falls’ and becomes transparent, revealing the new one behind it.
+    # RiseInTransition - shader where the new screen rises from the screen centre while fading from transparent to opaque.
+
+        # duration¶
+    # Duration in seconds of the transition, replacing the default of TransitionBase.
+    # duration = NumericProperty(150) and defaults to .15 (= 150ms).
